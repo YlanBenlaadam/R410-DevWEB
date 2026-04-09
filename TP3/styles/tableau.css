@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/* =====================================================================
+   TP3 - tableau.css
+   ---------------------------------------------------------------------
+   Meme design que le TP2. On n'a rien de nouveau a apprendre ici,
+   c'est juste pour que la page ait le meme look que le TP2.
+   ===================================================================== */
+
+
+/* Zone autour du tableau (marges) */
+main article {
+    margin: 1.5rem;
+}
+
+
+/* Le tableau occupe toute la largeur et a un fond creme */
+table {
+    width: 100%;                         /* largeur = 100% du parent */
+    border-collapse: collapse;           /* fusionne les bordures des cellules */
+    background-color: #f7f3ef;           /* couleur de fond creme */
+    box-shadow: 0 0 0 3px #999;          /* contour gris autour du tableau */
+    text-align: center;                  /* texte centre */
+    font-size: 1.1rem;                   /* taille de texte un peu plus grande */
+}
+
+
+/* Le caption (petit texte sous le tableau) */
+caption {
+    caption-side: bottom;                /* affiche le caption SOUS le tableau */
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+
+/* Toutes les cellules (th et td) : bordures et padding */
+th, td {
+    border: 2px solid #f0f0f0;
+    padding: 0.8rem 0.6rem;
+}
+
+
+/* Entete : fond noir, texte blanc (pour les th et td du thead) */
+thead th, thead td {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Premiere colonne du tbody : le nom du mage */
+tbody th {
+    background-color: #f5efe8;
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;                 /* evite que le nom passe a la ligne */
+}
+
+
+/* Alternance de couleurs : lignes paires / lignes impaires */
+tbody tr:nth-child(odd) td {
+    background-color: #f3ede6;
+}
+tbody tr:nth-child(even) td {
+    background-color: #dfe6ee;
+}
+
+
+/* Zone des boutons sous le tableau */
+.btn {
+    display: flex;                       /* flexbox */
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;             /* boutons centres horizontalement */
+    margin-top: 1.5rem;
+    gap: 15px;                           /* espace entre les boutons */
+}
+
+
+/* Style des boutons */
+.btn button {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: 2px solid #999;
+    border-radius: 6px;
+    background-color: #f3ecd0;
+    color: #b8751a;
+    font-weight: bold;
+}
+
+
+/* Classes utilisees par la vue mobile pour alterner les couleurs */
+.ligne1 td, .ligne1 th { background-color: #f3ede6; }
+.ligne2 td, .ligne2 th { background-color: #dfe6ee; }
