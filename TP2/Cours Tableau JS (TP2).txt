@@ -1,0 +1,62 @@
+							Cours Tableau JS (TP2)
+
+
+
+const contenu = {};
+Tu crées un objet.
+Un objet c’est juste :
+
+clé → valeur
+clé → valeur
+clé → valeur
+
+contenu
+├─ colonnes → ?
+└─ lignes → ?
+
+colonnes = key &  ? = valeur 
+
+
+2) contenu.colonnes = [] ;
+   contenu.lignes  = [] ;
+
+donc ligne = [] et colonne = [] ;
+
+RQ -> contenu.colonnes contient : ["Autodiscipline","Elementalisme","Naturalisme",...] -> c'est juste une liste simple 
+
+or lignes est une liste de listes donc contenu.lignes contienent :
+				 [
+ 					["8","5","5","7","12","14","6","18","11"],
+ 					["5","16","9","8","12","5","7","10","18"],
+ 					["10","6","15","7","14","11","17","15","14"]
+				 ]
+
+5️⃣ Pourquoi JS ne se trompe pas (il sait que lignes = liste de listes alors que colonnes = liste simple )
+contenu.colonnes.push("Autodiscipline"); -> ajoute la string Autodiscipline a la liste contenu
+contenu.lignes.push(notes);		 -> ajoute la liste notes a lignes
+
+
+
+6️⃣ Exemple très simple
+const contenu = {};
+
+contenu.colonnes = [];
+contenu.lignes = [];
+
+contenu.colonnes.push("Math");
+contenu.colonnes.push("Physique");
+
+contenu.lignes.push(["12","15"]);
+contenu.lignes.push(["9","11"]);
+
+résultat :
+
+contenu
+├─ colonnes
+│   ├─ "Math"
+│   └─ "Physique"
+│
+└─ lignes
+    ├─ ["12","15"]
+    └─ ["9","11"]
+					

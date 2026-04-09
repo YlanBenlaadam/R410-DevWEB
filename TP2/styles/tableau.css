@@ -1,0 +1,128 @@
+  @charset "utf-8";
+
+  /* zone du tableau */
+  main article {
+    margin: 1.5rem;
+  }
+
+  /* tableau */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f7f3ef;
+    box-shadow: 0 0 0 3px #999;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  /* caption */
+  caption {
+    caption-side: bottom;
+    padding: 0.5rem;
+    font-weight: bold;
+  }
+
+  /* cellules */
+  th,
+  td {
+    border: 2px solid #f0f0f0;
+    padding: 0.8rem 0.6rem;
+  }
+
+  /* 1re ligne du thead */
+  thead tr:first-child th,
+  thead tr:first-child td {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  thead th .label {
+  display: block;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 8px;
+  background-color: black;
+}
+
+thead th .tri {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  background-color: aqua;
+}
+
+thead th .asc,
+thead th .desc {
+  background-color: white;
+  border: 2px solid cyan;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 4px 8px;
+  font-size: 1rem;
+}
+
+
+  /* 1re colonne : noms */
+  tbody th {
+    background-color: #f5efe8;
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;
+  }
+
+  /* alternance lignes */
+  tbody tr:nth-child(odd) td {
+    background-color: #f3ede6;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #dfe6ee;
+  }
+
+  /* pied du tableau */
+  tfoot th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  tfoot td {
+    background-color: #f3ecd0;
+    color: #b8751a;
+    font-weight: bold;
+  }
+
+  /* cellules des agrégations */
+  tfoot tr:last-child td {
+    background-color: #f3ecd0;
+  }
+
+  /* notes en dessous de 10 */
+  .note-faible {
+    border: 2px solid red;
+    box-sizing: border-box;
+  }
+
+    .btn {
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      margin-left: 1.5rem;
+      margin-top: 1.5rem;
+      gap: 15px;
+    }
+
+
+    .ligne1 td,
+    .ligne1 th
+  {
+    background-color: #f3ede6;
+  }
+
+  .ligne2 td,
+  .ligne2 th
+  {
+    background-color: #dfe6ee;
+  }
