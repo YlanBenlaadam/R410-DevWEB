@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!-- =====================================================================
+     TP3 - tableau.html
+     -----------------------------------------------------------------
+     Par rapport au TP2, ce document est FORTEMENT SIMPLIFIÉ :
+       - La balise <table> est presque VIDE (on ne garde que l'id et
+         le <caption>). Le contenu du tableau (thead, tbody, tfoot)
+         sera créé dynamiquement en JavaScript, à partir des données
+         reçues du serveur via fetch().
+       - Les deux boutons invoquent désormais :
+            get_table_in_desktop_view('table_unique')
+            get_table_in_mobile_view('table_unique')
+         'table_unique' est l'identifiant de la <table> cible.
+     ===================================================================== -->
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<title>Tableau TP3</title>
+		<!-- On réutilise les mêmes feuilles de style que le TP2 -->
+		<link rel="stylesheet" href="./styles/tableau.css" />
+		<!-- Le script JS qui va faire les fetch et reconstruire le tableau -->
+		<script src="./scripts/tableau.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>TP3 - Tableau dynamique</h1>
+			<h2>Données fournies par le serveur (PHP + JSON)</h2>
+			<p>Ales-Bianchetti Jacques, IUT-Orsay</p>
+		</header>
+
+		<main>
+			<section>
+				<div>
+					<h1>La table des réalités inaliénables</h1>
+				</div>
+				<article>
+					<!-- =============================================
+					     Tableau VIDE :
+					     - id="table_unique" : sert de cible aux fonctions JS
+					     - <caption> : permet de vérifier qu'on nettoie
+					       bien le tableau avant de le reconstruire. Si
+					       on voit le caption apparaître à l'écran avant
+					       le 1er clic, c'est bon : le tableau est vide.
+					       Après le 1er clic, il disparaît car on supprime
+					       tous les enfants de <table>.
+					     ============================================= -->
+					<table id="table_unique">
+						<caption>Tableau vide au départ - cliquer sur un bouton pour le remplir</caption>
+					</table>
+
+					<!-- =============================================
+					     Deux boutons :
+					     - Le 1er demande l'affichage en mode "desktop"
+					       (classique : mages en lignes, disciplines en colonnes)
+					     - Le 2nd demande l'affichage en mode "mobile"
+					       (une paire discipline/note par ligne)
+					     On passe 'table_unique' (l'id de la <table>) en paramètre
+					     aux fonctions JS, pour qu'elles sachent où écrire.
+					     ============================================= -->
+					<div class="btn">
+						<button type="button" id="btn-Desktop"
+							onclick="get_table_in_desktop_view('table_unique')">
+							Charger les notes (affichage desktop)
+						</button>
+						<button type="button" id="btn-Mobile"
+							onclick="get_table_in_mobile_view('table_unique')">
+							Charger les notes (affichage mobile)
+						</button>
+					</div>
+				</article>
+			</section>
+		</main>
+
+		<footer>
+			<p>all rights reserved metatron</p>
+			<address>
+				<p>IUT D'Orsay - 13 avenue des Sciences - 91190 Gif-sur-Yvette | FRANCE</p>
+			</address>
+		</footer>
+	</body>
+</html>

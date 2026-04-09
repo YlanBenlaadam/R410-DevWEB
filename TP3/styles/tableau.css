@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+/* =====================================================================
+   TP3 - tableau.css
+   ---------------------------------------------------------------------
+   Même style que le TP2, simplement recopié pour que le TP3 soit
+   autonome. Rien n'est modifié côté présentation : les couleurs,
+   l'alternance de lignes, etc. sont identiques.
+   ===================================================================== */
+
+/* Zone du tableau */
+main article {
+    margin: 1.5rem;
+}
+
+/* Tableau : largeur 100%, bordures fusionnées, fond crème */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f7f3ef;
+    box-shadow: 0 0 0 3px #999;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Le caption est placé sous le tableau */
+caption {
+    caption-side: bottom;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+/* Toutes les cellules (th et td) */
+th, td {
+    border: 2px solid #f0f0f0;
+    padding: 0.8rem 0.6rem;
+}
+
+/* Entête : fond noir, texte blanc */
+thead th, thead td {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+/* Première colonne (noms des mages) */
+tbody th {
+    background-color: #f5efe8;
+    font-weight: bold;
+    color: black;
+    white-space: nowrap;
+}
+
+/* Alternance des lignes dans le tbody */
+tbody tr:nth-child(odd) td {
+    background-color: #f3ede6;
+}
+tbody tr:nth-child(even) td {
+    background-color: #dfe6ee;
+}
+
+/* Zone des boutons sous le tableau */
+.btn {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 15px;
+}
+
+.btn button {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 1rem;
+    border: 2px solid #999;
+    border-radius: 6px;
+    background-color: #f3ecd0;
+    color: #b8751a;
+    font-weight: bold;
+}
+
+/* Classes utilisées en mode 'mobile' : alternance des paires */
+.ligne1 td, .ligne1 th { background-color: #f3ede6; }
+.ligne2 td, .ligne2 th { background-color: #dfe6ee; }
